@@ -5,10 +5,10 @@ const isAnOpeartor = val =>{
     return !isNaN(val) || val === "." || val === "=";
 }
 
- const button = (props) => (
-    <div className = {`button-wrapper ${isAnOpeartor(props.children) ? null : "operator"}`}>
+ const Button = (props) => (
+    <div className = {`button-wrapper ${isAnOpeartor(props.children) ? null : "operator"}`} onClick={() => props.handleClick(props.children)}>
         {props.children}
     </div>
 );
 
-export default button;
+export default Button;
